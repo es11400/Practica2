@@ -1,0 +1,367 @@
+* {
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+	overflow-x: hidden;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.title{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: #FFF;
+    z-index: 2;
+}
+
+@keyframes slider {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+.slide{
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.slide figure img {
+    width: 20%; 
+    float: left;
+}
+
+.slide figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 30s slider infinite;
+}
+
+.quien-soy-item {
+    display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    
+	flex-grow: 1;   
+}
+
+.img-tinto-yomismo img {
+/*
+    display: flex;
+	display: -webkit-flex;
+*/
+	height: 300px;
+	border-radius: 50%;
+     
+}
+
+.flip {
+	position: relative;
+	height: 300px;
+}
+
+.front, .back {
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transition: transform 1s;
+}
+
+.back {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+
+.flip:hover .front {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+
+.flip:hover .back {
+	transform: rotateY(0);
+	-webkit-transform: rotateY(0);
+}
+
+.img-tinto-yomismo:hover #nombre:after {
+    content: "¿ Un tintito ?";
+    
+}
+
+#nombre:after {
+    content: "Carlos Castaño";
+}
+
+
+.section-container-white {
+    color: #000;
+    background-color: #fff;
+    padding: 25px;
+    margin-right: calc(-50vw + 50%);
+	margin-left: calc(-50vw + 50%);
+    min-height: 400px;
+}
+
+.section-container-gray {
+    color: #FFF;
+    background-color: #e0e0e0;
+    padding: 25px;
+    margin-right: calc(-50vw + 50%);
+	margin-left: calc(-50vw + 50%);
+    min-height: 400px;
+}
+
+.section-container {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+/*  height: 50px;*/
+  background-color: #e0e0e0;
+}
+
+.navbar .navbar-list {
+	list-style-type: none;
+	margin: 0px;
+	float: right;
+	font-size: 0;
+}
+
+.navbar .navbar-list .navbar-item {
+	display: inline-block;
+	font-size: 16px;
+}
+
+.navbar .navbar-list .navbar-item.active {
+	color: #F7F7F7;
+	background-color: #A4A4A4;
+}
+
+.navbar .navbar-list .navbar-item.active-reverse {
+	color: #101010;
+	background-color: #F7F7F7;
+}
+
+.navbar .navbar-list .navbar-item a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 20px;
+	color: rgba(0, 0, 0, 0.92);
+	transition: all 0.5s linear;
+}
+
+
+.navbar .navbar-list .navbar-item a:hover {
+	color: #F7F7F7;
+	background-color: #A4A4A4;
+}
+
+.row-flex {
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
+}
+
+
+
+.uno {order: 1;}
+.dos {order: 2;}
+.tres{order:3;}
+.cuatro{order:4;}
+.cinco{order:5;}
+
+.estudios-item {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-grow: 1;  
+    justify-content: center;
+    align-items: center;
+    width: 33.33333%;
+    min-height: 110px;
+    color: black;
+}
+
+.estudios-item .circulo {
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    font-size:35px;
+    color:#fff;
+    line-height:100px;
+    text-align:center;
+   
+}
+
+.estudios-item .dos {
+    align-items: center;
+}
+
+
+.rojo {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.orange {
+    background: darkorange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.celeste {
+    background-color: aqua;
+}
+
+.row-flex:hover #uno { 
+    background-color: #efeded;
+    -webkit-transition-property:background-color;
+    -moz-transition-property:background-color;
+    -o-transition-property:background-color;
+    -ms-transition-property:background-color;
+    transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -moz-transition-duration:1s;
+    -o-transition-duration:1s;
+    -ms-transition-duration:1s;
+    transition-duration:1s;
+}
+ 
+.row-flex:hover #dos { 
+    background-color: #efeded;
+    -webkit-transition-property:background-color;
+    -moz-transition-property:background-color;
+    -o-transition-property:background-color;
+    -ms-transition-property:background-color;
+    transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -moz-transition-duration:1s;
+    -o-transition-duration:1s;
+    -ms-transition-duration:1s;
+    transition-duration:1s;
+}
+
+.row-flex:hover #tres { 
+    background-color: #efeded;
+    -webkit-transition-property:background-color;
+    -moz-transition-property:background-color;
+    -o-transition-property:background-color;
+    -ms-transition-property:background-color;
+    transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -moz-transition-duration:1s;
+    -o-transition-duration:1s;
+    -ms-transition-duration:1s;
+    transition-duration:1s;
+}
+
+.row-flex:hover #cuatro { 
+    background-color: #efeded;
+    -webkit-transition-property:background-color;
+    -moz-transition-property:background-color;
+    -o-transition-property:background-color;
+    -ms-transition-property:background-color;
+    transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -moz-transition-duration:1s;
+    -o-transition-duration:1s;
+    -ms-transition-duration:1s;
+    transition-duration:1s;
+}
+
+.row-flex:hover #cinco { 
+    background-color: #efeded;
+    -webkit-transition-property:background-color;
+    -moz-transition-property:background-color;
+    -o-transition-property:background-color;
+    -ms-transition-property:background-color;
+    transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -moz-transition-duration:1s;
+    -o-transition-duration:1s;
+    -ms-transition-duration:1s;
+    transition-duration:1s;
+}
+
+.sobremi {
+    color: black;
+}
+
+.video {
+    width: 100%;
+    padding:  10px;
+}
+
+#googleMap {
+	height: 400px;
+}
+
+
+.footer {
+/*
+    color: #FFF;
+    background-color: darkgray;
+    min-height: 50px;
+*/
+    background-color: darkgray;
+	color: white;
+	height: 50px;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+}

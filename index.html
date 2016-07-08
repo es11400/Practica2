@@ -5,40 +5,239 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-jpiiZm0kg4wbYwPvUtNZvyLbiNcz6p8"></script>
     </head>
     <body>
         <header id="header" class="header">
-            
+            <h1 id="title" class="title">Juan Carlos Castaño Moreno</h1>
+            <div class="slide">
+                <figure>
+                    <img src="img/campina.jpg">
+                    <img src="img/gp2012.jpg">
+                    <img src="img/iphone.jpg">
+                    <img src="img/matrix.jpg">
+                    <img src="img/galloazul.jpeg">
+                </figure>
+            </div>
         </header>
-        <nav>
-            
-        </nav>
+        <nav class="navbar">
+			<ul class="navbar-list">
+				<li class="navbar-item active">
+					<a href="#">Inicio</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#quien-soy">Quien soy</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#estudios">Estudios</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#experiencia">Experiencia</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#sobre-mi">Sobre mi</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#contacto">Contacto</a>
+				</li>
+			</ul>
+		</nav>
         <div class="container">
-            <section id="sobre-mi" class="sobre-mi section-container-white">
+            <section id="quien-soy" class="quien-soy clearfix section-container section-container-white">
+               <div class="row-flex">
+                   <article class="quien-soy-item uno">
+                    <ul>
+                        <il><h2><strong>Juan Carlos Castaño Moreno</strong></h2></il>
+                        <il><h3>Jerez de la Frontera - Cádiz</h3></il>
+                        <il><a href="mailto:11400.es@gmail.com"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a></il>
+                        <il><a href="https://www.twitter.com/es11400"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></il>
+                        <il><a href="https://www.facebook.com/11400es"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a></il>
+                        <il><a href="https://www.linkedin.com/in/11400es"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></il>
+                    </ul>
+                    </article>
                 
+                   <article class="quien-soy-item dos">
+                    <figure class="img-tinto-yomismo">
+<!--                        <img src="img/yomismamente.jpg" alt="Yo mismamente...">-->
+                        <div class="flip">
+                            <div class="front flip-img">
+                                <img src="img/yomismamente.jpg" alt="Yo mismamente...">
+                            </div>
+
+                            <div class="back flip-img">
+                                <img src="img/tinto.jpg" alt="¿Un tintito?">
+                            </div>			
+				        </div>
+                        <figcaption>
+				            <small id="nombre"></small>
+				        </figcaption>
+                    </figure>
+                    </article>
+                
+                
+                </div>
             </section>
-            <section id="estudios" class="estudios section-container-grey">
-                
+            <section id="estudios" class="estudios clearfix section-container section-container-gray">
+                <article class="row-flex">
+                   
+                    <div class="estudios-item uno">
+                         
+                    </div>
+                    <div class="estudios-item dos"><div class="circulo blue">1990</div></div>
+                    
+                    <div id="uno" class="estudios-item tres">
+                            <h2>Colegio La Salle Buen Pastor</h2>
+                            <small>EGB-BUP-COU</small>
+                    </div>
+                </article>
+                <article class="row-flex">
+                    <div class="estudios-item tres">
+                         
+                    </div>
+                    <div class="estudios-item dos"><div class="circulo orange">1995</div></div>
+                    <div id="dos" class="estudios-item uno">
+                        <h2>I.F.P Francisco Romero Vargas</h2>
+                        <small>Técnico Especialista Informática de Gestión</small>
+                    </div>
+                </article>
+                <article class="row-flex">
+                    <div class="estudios-item uno">
+                         
+                    </div>
+                    <div class="estudios-item dos"><div class="circulo yellow">1996</div></div>
+                    <div id="tres" class="estudios-item tres">
+                        <h2>Universidad de Cádiz</h2>
+                        <small>Informática de Gestión (No terminada)</small>
+                    </div>
+                </article>
+                <article class="row-flex">
+                    <div class="estudios-item tres">
+                         
+                    </div>
+                    <div class="estudios-item dos"><div class="circulo celeste">2014</div></div>
+                    <div id="cuatro" class="estudios-item uno">
+                        <h2>EscuelaIt</h2>
+                        <small>Curso Programación JAVA</small>
+                        <small>Curso Programación Android - LexDroid II</small>
+                    </div>
+                </article>
+                <article class="row-flex">
+                    <div class="estudios-item uno">
+                         
+                    </div>
+                    <div class="estudios-item dos"><div class="circulo rojo">2016</div></div>
+                    <div id="cinco" class="estudios-item tres">
+                        <h2>KeepCooding.io</h2>
+                        <small>Programación iOS para iPhone y iPad</small>
+                        <small>Web Development Master Bootcamp I Edición</small>
+                    </div>
+                </article>
+
             </section>
-            <section id="experiencia" class="experiencia section-container-white">
-                
+            <section id="experiencia" class="experiencia clearfix section-container section-container-white">
+                <article class="row text-center">
+                    <div class="col-6">
+                        <h2>CeutaSol</h2>
+                        <small>Empresa familiar</small><br>
+                        <small>Administrativo</small>
+                        <small>Programador junior Cobol</small>
+                    </div>
+                    <div class="col-6">
+                        <h2>Programador en PC24h</h2>
+                        <small>Programador en Cobol, Pascal y Clipper</small>
+                    </div>
+                </article>
+                <article class="row text-center">   
+                    <div class="col-6">
+                        <h2>SistMan Software</h2>
+                        <small>Analista</small><br>
+                        <small>Programador VB6, VB.net, ASP.net</small><br>
+                        <small>Programador PHP(HTML, CSS, javascript)</small>
+                    </div>
+                    <div class="col-6">
+                        <h2>Quarande.es</h2>
+                        <small>Programador PHP con Symfony</small>
+                    </div>
+                </article>
+                <article class="row text-center">
+                    <div class="col-12">
+                        <h2>11400 Global Solutions</h2>
+                        <small>Programador PHP con Symfony</small><br>
+                        <small>Programador Android</small><br>
+                        <small>Programador IOS (Básico)</small><br>
+                    </div>
+                </article>
             </section>
-            <section id="portfolio" class="portfolio section-container-grey">
+            <section id="sobre-mi" class="sobremi clearfix section-container section-container-gray">
+                <article class="row text-justify">
+                    <div class="col-3">&nbsp;</div>
+                    <div class="col-6">
+                        <h2>Algo sobre mi</h2>
+                        <p>Me apasiona este mundo y puedo decir que mi trabajo es mi hobby o biceversa, a los 10 años llego a mis manos un Atari y un libro de Basic, tecleaba lo que ese libro decia sin entender si quiera lo que significaba, la intriga de lo que se podria hacer en un futuro con estos cacharros me motivo a seguir investigando por mi cuenta, hasta que empeze a estudiar. Despues de muchos años y tocando distintos lenguajes de programación. Sigo con la misma pasión de cuando era niño.</p>
+                        
+                        <p>Mis aficiones a parte de la de teclear, son la Formula 1, Star Wars y mi familia.</p>
+                    </div>
+                </article>
+                <article class="row text-center">
+                    <div class="col-3">&nbsp;</div>
+                    <div class="col-3">
+                        <video id="video1" class="video" controls>
+						      <source src="videos/batman-lego.mp4" type="video/mp4">
+					    </video>
+                    </div>
+                    <div class="col-3">
+                        <video id="video2" class="video" controls>
+						    <source src="videos/batman-lego.mp4" type="video/mp4">
+					    </video>
+                    </div>
+                </article>
                 
+                <article class="row text-center">
+                    <div class="col-3">&nbsp;</div>
+                    <div class="col-3">
+                        <video id="video3" class="video" controls>
+						      <source src="videos/batman-lego.mp4" type="video/mp4">
+					    </video>
+                    </div>
+                    <div class="col-3">
+                        <video id="video4" class="video" controls>
+						    <source src="videos/batman-lego.mp4" type="video/mp4">
+					    </video>
+                    </div>
+                </article>
             </section>
-            <section id="contacto" class="contacto section-container-white">
-                
+            <section id="contacto" class="contacto clearfix section-container section-container-white">
+                <article class="row text-center">
+                    <div class="col-2">&nbsp;</div>
+                    <div class="col-4">
+                        <h2>Donde estamos </h2>
+                        <small>Si aceptas la localización, puedes ver lo que nos separa.</small>
+                        <small>Tú eres el verde.</small>
+                        <div id="googleMap"></div>
+                    </div>
+                    <div class="col-4">
+                        <h2>¿ Tienes dudas ?</h2>
+                        <form id="form-contact" class="form" name="contact-batman" method="get" novalidate>
+                        
+                        </form>
+                    </div>
+                </article>
             </section>
         </div>
         <footer id="footer" class="footer">
-            <div class="col-6 text-left">
+            <div class="col-1"></div>
+            <div class="col-5 text-left">
                 Mi CV &copy; 2016
             </div>
-            <div class="col-6 text-right">
-                Hecho a mano por <a href="www.11400.es">11400.es</a>
+            <div class="col-5 text-right">
+                Hecho a mano por <a href="http://www.11400.es">11400.es</a>
             </div>
+            <div class="col-1"></div>
         </footer>
     </body>
     <script src="js/menu.js"></script>
+    <script src="js/navigation.js"></script>
+    
     
 </html>
