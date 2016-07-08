@@ -346,13 +346,64 @@ body {
 	height: 400px;
 }
 
+.form-row {
+    margin-left: 50px;
+    margin-bottom: 5px;
+    text-align: left;
+    color:dimgray;
+}
+
+ #label {
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+input {
+    border: 0px;
+    border-style: none;
+    font-size: 15px;
+}
+
+input[type=text], input[type=tel] {
+    width: 100%;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+	background-color: #A4A4A4;
+	border: none;
+	color: white;
+	padding: 15px 40px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 0px;
+}
+
+#otroscomonosconocio {
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    font-size: 15px;
+}
+
+textarea {
+    border: 0px;
+    border-style: none;
+    width: 100%;
+    font-size: 15px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+.error {
+    border: 1px;
+    border-style: solid;
+    border-color: red;
+}
 
 .footer {
-/*
-    color: #FFF;
-    background-color: darkgray;
-    min-height: 50px;
-*/
     background-color: darkgray;
 	color: white;
 	height: 50px;

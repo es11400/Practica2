@@ -140,7 +140,7 @@
                     <div class="col-6">
                         <h2>CeutaSol</h2>
                         <small>Empresa familiar</small><br>
-                        <small>Administrativo</small>
+                        <small>Administrativo</small><br>
                         <small>Programador junior Cobol</small>
                     </div>
                     <div class="col-6">
@@ -217,9 +217,50 @@
                         <div id="googleMap"></div>
                     </div>
                     <div class="col-4">
-                        <h2>¿ Tienes dudas ?</h2>
+                        <h2>¿ Tienes dudas ?</h2><br>
                         <form id="form-contact" class="form" name="contact-batman" method="get" novalidate>
-                        
+                            <div id="label" class="form-row">
+							    <label for="nombre">Nombre</label>  
+                            </div>
+                            <div class="form-row">
+				                <input type="text" id="nombre" name="nombre" tabindex="1" required>
+						    </div>
+                            <div id="label" class="form-row">
+							    <label for="email">Corre electrónico</label>  
+                            </div>
+                            <div class="form-row">
+				                <input type="text" id="email" name="email" pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" tabindex="2" required>
+						    </div>
+                            <div id="label" class="form-row">
+							    <label for="email">¿Como nos ha conocido?</label>  
+                            </div>
+                            <div class="form-row">
+							    <label for="comonosconocio_prensa">Prensa</label>
+							    <input type="radio" id="comonosconocio_prensa" name="comonosconocio" value="prensa" tabindex="3" required>
+							    <label for="comonosconocio_email">Email</label>
+							    <input type="radio" id="comonosconocio_email" name="comonosconocio" value="email" tabindex="4" required>
+							    <label for="comonosconocio_internet">Internet</label>
+							    <input type="radio" id="comonosconocio_internet" name="comonosconocio" value="internet" tabindex="5" required>
+							    <label for="comonosconocio_otros">otros</label>
+							    <input type="radio" id="otros" name="comonosconocio" value="otros" tabindex="6" required>
+						    </div>
+                              
+                            <div id="label" class="form-row">
+							    <label for="telefono">Teléfono</label>  
+                            </div>
+                            <div class="form-row">
+				                <input type="tel" id="telefono" name="telefono" required tabindex="7">
+						    </div>
+                            <div id="label" class="form-row">
+							    <label for="observaciones">Observaciones<small>(máximo 150 caracteres)</small></label>  
+                            </div>
+                            <div class="form-row">
+                                <textarea id="observaciones" name="observaciones" rows="6" tabindex="8" maxlength="150" required></textarea>
+                                <p id="cuantosCaracteres"></p>
+						    </div>
+                            <div class="form-row">
+							    <button id="enviar" type="submit" name="Enviar">Enviar </button>
+						    </div>
                         </form>
                     </div>
                 </article>
@@ -238,6 +279,6 @@
     </body>
     <script src="js/menu.js"></script>
     <script src="js/navigation.js"></script>
-    
-    
+    <script src="js/fullscreen.js"></script>
+    <script src="js/form.js"></script>
 </html>

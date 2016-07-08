@@ -40,7 +40,7 @@ function initialize() {
       var iconoVerde = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
       var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
     if(tuPosicion != null) {
-          console.log(tuPosicion);
+         
         var marker = new google.maps.Marker({
             position: tuPosicion,
             icon : iconoVerde,
