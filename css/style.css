@@ -404,6 +404,10 @@ textarea {
     border-color: red;
 }
 
+.errorlabel {
+    color:red;
+}
+
 .footer {
     background-color: darkgray;
 	color: white;

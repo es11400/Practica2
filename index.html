@@ -220,19 +220,19 @@
                         <h2>¿ Tienes dudas ?</h2><br>
                         <form id="form-contact" class="form" name="contact" method="get" novalidate>
                             <div id="label" class="form-row">
-							    <label for="nombre">Nombre</label>  
+							    <label id="label_inputnombre" for="inputnombre">Nombre</label>  
                             </div>
                             <div class="form-row">
-				                <input type="text" id="nombre" name="nombre" tabindex="1" required>
+				                <input type="text" id="inputnombre" name="inputnombre" tabindex="1" required>
 						    </div>
                             <div id="label" class="form-row">
-							    <label for="email">Corre electrónico</label>  
+							    <label id="label_email" for="email">Corre electrónico</label>  
                             </div>
                             <div class="form-row">
 				                <input type="text" id="email" name="email" pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" tabindex="2" required>
 						    </div>
                             <div id="label" class="form-row">
-							    <label for="email">¿Como nos ha conocido?</label>  
+							    <label id="label_comonosconocio" for="comonosconocio">¿Como nos ha conocido?</label>  
                             </div>
                             <div class="form-row">
 							    <label for="comonosconocio_prensa">Prensa</label>
@@ -246,13 +246,13 @@
 						    </div>
                               
                             <div id="label" class="form-row">
-							    <label for="telefono">Teléfono</label>  
+							    <label id="label_telefono" for="telefono">Teléfono</label>  
                             </div>
                             <div class="form-row">
 				                <input type="tel" id="telefono" name="telefono" required tabindex="7">
 						    </div>
                             <div id="label" class="form-row">
-							    <label for="observaciones">Observaciones<small>(máximo 150 caracteres)</small></label>  
+							    <label id="label_observaciones" for="observaciones">Observaciones<small>(máximo 150 caracteres)</small></label>  
                             </div>
                             <div class="form-row">
                                 <textarea id="observaciones" name="observaciones" rows="6" tabindex="8" maxlength="150" required></textarea>

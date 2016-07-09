@@ -1,18 +1,21 @@
 var form = document.getElementById("form-contact");
-var inputNombre = document.getElementById("nombre");
+var submitInput = document.getElementById("enviar");
+var inputNombre = document.getElementById("inputnombre");
 var inputEmail  = document.getElementById("email");
 var inputComoNosConocio = document.getElementsByName("comonosconocio");
 var opcionesComoNosConocio = {
-  "prensa": document.getElementById("prensa"),
-  "email": document.getElementById("email"),
-  "internet": document.getElementById("internet"),
-  "otros": document.getElementById("otros")
+  "prensa": document.getElementById("comonosconocio_prensa"),
+  "email": document.getElementById("comonosconocio_email"),
+  "internet": document.getElementById("comonosconocio_internet"),
+  "otros": document.getElementById("comonosconocio_otros"),
 };
 var inputOtrosComoNosConocio = document.createElement("input");
 var inputTelefono = document.getElementById("telefono");
 var textareaObservaciones = document.getElementById("observaciones");
 var cuantosCaracteres = document.getElementById("cuantosCaracteres");
 
+var loadingButton = document.createElement('i');
+loadingButton.classList.add("fa", "fa-spinner", "fa-spin");
 
 inputOtrosComoNosConocio.setAttribute("id", "otroscomonosconocio");
 inputOtrosComoNosConocio.setAttribute("type", "text");
@@ -51,23 +54,32 @@ textareaObservaciones.addEventListener('keyup', function(evt) {
 });
 
 form.addEventListener("submit", function(evt) {
-   var submitInput = document.getElementById("enviar");
-    if (inputNombre.checkValidity() == false) {
+    inputNombre.classList.remove("error");
+    inputEmail.classList.remove("error");
+    document.getElementById("label_comonosconocio").classList.remove("errorlabel");
+    inputOtrosComoNosConocio.classList.remove("error");
+    inputTelefono.classList.remove("error");
+    textareaObservaciones.classList.remove("error");
+    
+    
+    if ( inputNombre.checkValidity() == false) {
         inputNombre.classList.add("error");
-        inputNombre.focus();
+        
         evt.preventDefault();
         return false;
     };
+ 
     
     if(inputEmail.checkValidity() == false) {
 		inputEmail.classList.add("error");
-		inputEmail.focus();
+		inputNombre.classList.remove("error");
 		evt.preventDefault();
 		return false;
 	};
     
     if (opcionesComoNosConocio.prensa.checkValidity() == false) {
-		inputComoNosConocio.classList.add("error");
+		//inputComoNosConocio.classList.add("error");
+        document.getElementById("label_comonosconocio").classList.add("errorlabel");
 		evt.preventDefault();
 		return false;
 
@@ -82,13 +94,25 @@ form.addEventListener("submit", function(evt) {
 		}
 	};
     
+    if ( inputTelefono.checkValidity() == false) {
+        inputTelefono.classList.add("error");
+        evt.preventDefault();
+        return false;
+    };
+    
+    if ( textareaObservaciones.checkValidity() == false) {
+        textareaObservaciones.classList.add("error");
+        evt.preventDefault();
+        return false;
+    };
+    
     submitInput.appendChild(loadingButton);
 	evt.preventDefault();
 
 	setTimeout(function(){
 		submitInput.removeChild(loadingButton);
-		sendNotification("Formulario recibido");
+		//sendNotification("Formulario recibido");
 	}, 1000);
     
-    
+   
 });
