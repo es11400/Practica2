@@ -51,7 +51,7 @@ textareaObservaciones.addEventListener('keyup', function(evt) {
 });
 
 form.addEventListener("submit", function(evt) {
-   
+   var submitInput = document.getElementById("enviar");
     if (inputNombre.checkValidity() == false) {
         inputNombre.classList.add("error");
         inputNombre.focus();
@@ -81,7 +81,7 @@ form.addEventListener("submit", function(evt) {
 			return false;
 		}
 	};
-    var submitInput = document.getElementById("enviar");
+    
     submitInput.appendChild(loadingButton);
 	evt.preventDefault();
 
