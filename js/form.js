@@ -15,7 +15,12 @@ var textareaObservaciones = document.getElementById("observaciones");
 var cuantosCaracteres = document.getElementById("cuantosCaracteres");
 
 var loadingButton = document.createElement('i');
-loadingButton.classList.add("fa", "fa-spinner", "fa-spin");
+if (Modernizr.classList) {
+    loadingButton.classList.add("fa", "fa-spinner", "fa-spin");
+} else {
+    loadingButton.className += ' fa fa-spinner fa-spin';
+}
+
 
 inputOtrosComoNosConocio.setAttribute("id", "otroscomonosconocio");
 inputOtrosComoNosConocio.setAttribute("type", "text");
@@ -54,32 +59,52 @@ textareaObservaciones.addEventListener('keyup', function(evt) {
 });
 
 form.addEventListener("submit", function(evt) {
-    inputNombre.classList.remove("error");
-    inputEmail.classList.remove("error");
-    document.getElementById("label_comonosconocio").classList.remove("errorlabel");
-    inputOtrosComoNosConocio.classList.remove("error");
-    inputTelefono.classList.remove("error");
-    textareaObservaciones.classList.remove("error");
+    if (Modernizr.classList) {
+        inputNombre.classList.remove("error");
+        inputEmail.classList.remove("error");
+        document.getElementById("label_comonosconocio").classList.remove("errorlabel");
+        inputOtrosComoNosConocio.classList.remove("error");
+        inputTelefono.classList.remove("error");
+        textareaObservaciones.classList.remove("error");
+    } else {
+        inputNombre.className += ' error';
+        inputEmail.className += ' error';
+        document.getElementById("label_comonosconocio").className += ' error';
+        inputTelefono.className += ' error';
+        textareaObservaciones.className += ' error';
+    }
+    
     
     
     if ( inputNombre.checkValidity() == false) {
-        inputNombre.classList.add("error");
-        
+        if (Modernizr.classList) {
+            inputNombre.classList.add("error");
+        } else {
+            inputNombre.className += ' error';
+        }
         evt.preventDefault();
         return false;
     };
  
     
     if(inputEmail.checkValidity() == false) {
-		inputEmail.classList.add("error");
-		inputNombre.classList.remove("error");
+        if (Modernizr.classList) {
+		  inputEmail.classList.add("error");
+		  inputNombre.classList.remove("error");
+        } else {
+            inputEmail.className += ' error';
+        }
 		evt.preventDefault();
 		return false;
 	};
     
     if (opcionesComoNosConocio.prensa.checkValidity() == false) {
 		//inputComoNosConocio.classList.add("error");
-        document.getElementById("label_comonosconocio").classList.add("errorlabel");
+        if (Modernizr.classList) {
+            document.getElementById("label_comonosconocio").classList.add("errorlabel");
+        } else {
+            document.getElementById("label_comonosconocio").className += ' error';
+        }
 		evt.preventDefault();
 		return false;
 
@@ -87,7 +112,11 @@ form.addEventListener("submit", function(evt) {
     
     if(document.getElementById("otroscomonosconocio")){
 		if(document.getElementById("otroscomonosconocio").checkValidity() == false) {	
-            inputOtrosComoNosConocio.classList.add("error");
+            if (Modernizr.classList) {
+                inputOtrosComoNosConocio.classList.add("error");
+            } else {
+                inputOtrosComoNosConocio.className += ' error';
+            }
 			document.getElementById("otroscomonosconocio").focus();
 			evt.preventDefault();
 			return false;
@@ -95,13 +124,21 @@ form.addEventListener("submit", function(evt) {
 	};
     
     if ( inputTelefono.checkValidity() == false) {
-        inputTelefono.classList.add("error");
+        if (Modernizr.classList) {
+            inputTelefono.classList.add("error");
+        } else {
+            inputTelefono.className += ' error';
+        }
         evt.preventDefault();
         return false;
     };
     
     if ( textareaObservaciones.checkValidity() == false) {
-        textareaObservaciones.classList.add("error");
+        if (Modernizr.classList) {
+            textareaObservaciones.classList.add("error");
+        } else {
+            textareaObservaciones.className += ' error';
+        }
         evt.preventDefault();
         return false;
     };
@@ -111,7 +148,7 @@ form.addEventListener("submit", function(evt) {
 
 	setTimeout(function(){
 		submitInput.removeChild(loadingButton);
-		//sendNotification("Formulario recibido");
+		sendNotification("Formulario recibido");
 	}, 1000);
     
    

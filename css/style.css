@@ -96,7 +96,7 @@ body {
 
 .flip {
 	position: relative;
-	height: 300px;
+	height: 305px;
 }
 
 .front, .back {
@@ -420,4 +420,41 @@ textarea {
 
 .footer a {
     text-decoration: none;
+}
+
+
+.no-flexbox .nofb {
+    overflow: auto;
+    margin: auto;
+    padding: auto;
+    
+}
+
+.no-flexbox .nofb .item1 {
+    float: left;
+}
+
+.no-flexbox .nofb .item2 {
+    float: right;
+    margin-right: 200px;
+}
+
+.no-flexbox .nofb .item3 {
+    float: right;
+    margin-right: 200px;
+}
+
+.no-flexbox .nofb .estudios-item1 {
+    float: left;
+    width: 100%;
+}
+
+.no-flexbox .nofb .estudios-item1 .uno {
+    width: 20%;
+}
+.no-flexbox .nofb .estudios-item1 .dos {
+    width: 20%;
+}
+.no-flexbox .nofb .estudios-item1 .tres {
+    width: 20%;
 }

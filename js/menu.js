@@ -5,7 +5,12 @@ for (var i = 0; i < navbarItems.length; i++) {
 	//console.log(navbarItems[i]);
 	navbarItems[i].addEventListener('click', function(evt){
 		deleteActiveClass();
-		this.classList.add('active');
+        if (Modernizr.classList) {
+            this.classList.add('active');    
+        } else {
+            this.className += ' active';
+        }
+		
 		//var sectionToGo = this.getElementsByTagName('a')[0].href.split('#')[1];
 		var sectionToGo = this.getElementsByTagName('a')[0].href.split('#');
 		//console.log(sectionToGo);
@@ -78,7 +83,11 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F7F7F7';
 		deleteActiveClass();
-		document.querySelector('a[href="#"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+            document.querySelector('a[href="#"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href="#"]').parentNode.className += ' active';
+        }
 	} else if(window.pageYOffset >= offsetQuienSoy-60 && window.pageYOffset < offsetEstudios-60) {
 		if (!previus){
 			previus = 2;
@@ -87,7 +96,11 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F4F4F4';
 		deleteActiveClass();
-		document.querySelector('a[href$="quien-soy"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+            document.querySelector('a[href$="quien-soy"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href$="quien-soy"]').parentNode.className += ' active';
+        }
 	} else if(window.pageYOffset >= offsetEstudios-60 && window.pageYOffset < offsetExperiencia-60) {
 		if (!previus){
 			previus = 3;
@@ -96,7 +109,11 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F7F7F7';
 		deleteActiveClass();
-		document.querySelector('a[href$="estudios"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+		  document.querySelector('a[href$="estudios"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href$="estudios"]').parentNode.className += ' active';
+        }
 	} else if(window.pageYOffset >= offsetExperiencia-60 && window.pageYOffset < offsetSobreMi-60) {
 		if (!previus){
 			previus = 3;
@@ -105,7 +122,11 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F7F7F7';
 		deleteActiveClass();
-		document.querySelector('a[href$="experiencia"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+		  document.querySelector('a[href$="experiencia"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href$="experiencia"]').parentNode.className += ' active';
+        }
 	} else if(window.pageYOffset >= offsetSobreMi-60 && window.pageYOffset < offsetContacto-60) {
 		if (!previus){
 			previus = 3;
@@ -114,7 +135,11 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F7F7F7';
 		deleteActiveClass();
-		document.querySelector('a[href$="sobre-mi"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+		  document.querySelector('a[href$="sobre-mi"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href$="sobre-mi"]').parentNode.className += ' active';
+        }
 	} else if(window.pageYOffset >= offsetContacto-100 ) {
 		if (!previus){
 			previus = 3;
@@ -123,13 +148,22 @@ function changeMenuStyle(evt) {
 		}
 		navbar.style.backgroundColor = '#F7F7F7';
 		deleteActiveClass();
-		document.querySelector('a[href$="contacto"]').parentNode.classList.add("active");
+        if (Modernizr.classList) {
+            document.querySelector('a[href$="contacto"]').parentNode.classList.add("active");
+        } else {
+            document.querySelector('a[href$="contacto"]').parentNode.className += ' active';
+        }
 	}
 };
 
 function deleteActiveClass() {
 	for(var i = 0; i < navbarItems.length; i++){
-		navbarItems[i].classList.remove('active');
-		navbarItems[i].classList.remove('active-reverse');
+        if (Modernizr.classList) {
+            navbarItems[i].classList.remove('active');
+            navbarItems[i].classList.remove('active-reverse');    
+        } else {
+            navbarItems[i].className = 'navbar-item';
+        }
+		
 	}
 };
