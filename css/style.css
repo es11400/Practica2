@@ -451,10 +451,16 @@ textarea {
 
 .no-flexbox .nofb .estudios-item1 .uno {
     width: 20%;
+    float: left;
+    display: inline-block;
 }
 .no-flexbox .nofb .estudios-item1 .dos {
     width: 20%;
+    float: left;
+    display: inline-block;
 }
 .no-flexbox .nofb .estudios-item1 .tres {
     width: 20%;
+    float: left;
+    display: inline-block;
 }
