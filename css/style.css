@@ -10,6 +10,10 @@ body {
 	overflow-x: hidden;
 }
 
+.header{
+    height: 100vh;
+}
+
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
@@ -60,16 +64,17 @@ body {
     padding-top: 50px;
 }
 
-.slide figure img {
+.slide img {
     width: 20%; 
     float: left;
 }
 
-.slide figure {
+.slide {
     position: relative;
     width: 500%;
     margin: 0;
     left: 0;
+    height: 100vh;
     animation: 30s slider infinite;
 }
 
@@ -82,6 +87,10 @@ body {
 	justify-content: center;
     
 	flex-grow: 1;   
+}
+
+.titulo_imagen {
+    font-size: 12px;
 }
 
 .img-tinto-yomismo img {
@@ -364,6 +373,7 @@ input {
     border: 0px;
     border-style: none;
     font-size: 15px;
+    outline: 0px;
 }
 
 input[type=text], input[type=tel] {
@@ -381,6 +391,7 @@ input[type=button], input[type=submit], input[type=reset], button {
 	border-radius: 0px;
 }
 
+
 #otroscomonosconocio {
     border-bottom: 1px;
     border-bottom-style: solid;
@@ -396,6 +407,7 @@ textarea {
     border-bottom: 1px;
     border-bottom-style: solid;
     border-bottom-color: black;
+    outline: 0px;
 }
 
 .error {

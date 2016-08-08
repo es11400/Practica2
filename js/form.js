@@ -49,16 +49,22 @@ inputTelefono.addEventListener('keypress', function(evt) {
    }
 });
 
-textareaObservaciones.addEventListener('keyup', function(evt) {
-    //alert(textareaObservaciones.value.length);
-   if (this.value.length >= 150) {
+textareaObservaciones.addEventListener('keypress', function(evt) {
+
+    var formcontent = this.value;
+        formcontent = formcontent.trim();
+        formcontent = formcontent.split(" ");
+        numPalabras = formcontent.length;
+
+   if (numPalabras > 149) {
        evt.preventDefault();
    } else {
-       cuantosCaracteres.innerHTML = (150 - this.value.length) + " caracteres";
+       cuantosCaracteres.innerHTML = (149 - numPalabras) + " Palabras";
    }
 });
 
 form.addEventListener("submit", function(evt) {
+    
     if (Modernizr.classList) {
         inputNombre.classList.remove("error");
         inputEmail.classList.remove("error");
@@ -66,22 +72,28 @@ form.addEventListener("submit", function(evt) {
         inputOtrosComoNosConocio.classList.remove("error");
         inputTelefono.classList.remove("error");
         textareaObservaciones.classList.remove("error");
+        if(document.getElementById("otroscomonosconocio")){
+            inputOtrosComoNosConocio.classList.remove("error");
+        }
     } else {
-        inputNombre.className += ' error';
-        inputEmail.className += ' error';
-        document.getElementById("label_comonosconocio").className += ' error';
-        inputTelefono.className += ' error';
-        textareaObservaciones.className += ' error';
+        inputNombre.className = ' ';
+        inputEmail.className = ' ';
+        document.getElementById("label_comonosconocio").className = ' ';
+        inputTelefono.className = ' ';
+        textareaObservaciones.className = ' ';
+        if(document.getElementById("otroscomonosconocio")){
+            inputOtrosComoNosConocio.className = ' ';
+        }
     }
     
-    
-    
-    if ( inputNombre.checkValidity() == false) {
+
+    if ( inputNombre.checkValidity() == false ) {
         if (Modernizr.classList) {
             inputNombre.classList.add("error");
         } else {
             inputNombre.className += ' error';
         }
+        inputNombre.focus();
         evt.preventDefault();
         return false;
     };
@@ -94,23 +106,26 @@ form.addEventListener("submit", function(evt) {
         } else {
             inputEmail.className += ' error';
         }
+        inputEmail.focus();
 		evt.preventDefault();
 		return false;
 	};
     
     if (opcionesComoNosConocio.prensa.checkValidity() == false) {
-		//inputComoNosConocio.classList.add("error");
+		
         if (Modernizr.classList) {
             document.getElementById("label_comonosconocio").classList.add("errorlabel");
         } else {
             document.getElementById("label_comonosconocio").className += ' error';
         }
+        
 		evt.preventDefault();
 		return false;
 
 	};
     
     if(document.getElementById("otroscomonosconocio")){
+        
 		if(document.getElementById("otroscomonosconocio").checkValidity() == false) {	
             if (Modernizr.classList) {
                 inputOtrosComoNosConocio.classList.add("error");
@@ -129,6 +144,7 @@ form.addEventListener("submit", function(evt) {
         } else {
             inputTelefono.className += ' error';
         }
+        inputTelefono.focus();
         evt.preventDefault();
         return false;
     };
@@ -139,12 +155,17 @@ form.addEventListener("submit", function(evt) {
         } else {
             textareaObservaciones.className += ' error';
         }
+        textareaObservaciones.focus();
         evt.preventDefault();
         return false;
     };
     
-    submitInput.appendChild(loadingButton);
-	evt.preventDefault();
+    if (!Modernizr.formvalidation) {
+        alert('validation');
+    } else {
+        submitInput.appendChild(loadingButton);
+        evt.preventDefault();
+    }
 
 	setTimeout(function(){
 		submitInput.removeChild(loadingButton);
@@ -153,3 +174,6 @@ form.addEventListener("submit", function(evt) {
     
    
 });
+
+
+
