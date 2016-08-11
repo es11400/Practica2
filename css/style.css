@@ -216,7 +216,15 @@ body {
 	-webkit-flex-flow: row wrap;
 }
 
+.quiensoy-lista {
+    list-style-type: none;
+    display: inline-block;
+}
 
+.quiensoy-lista-item {
+    float: left;
+    padding-left: 10px;
+}
 
 .uno {order: 1;}
 .dos {order: 2;}

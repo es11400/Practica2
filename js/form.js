@@ -7,7 +7,7 @@ var opcionesComoNosConocio = {
   "prensa": document.getElementById("comonosconocio_prensa"),
   "email": document.getElementById("comonosconocio_email"),
   "internet": document.getElementById("comonosconocio_internet"),
-  "otros": document.getElementById("comonosconocio_otros"),
+  "otros": document.getElementById("comonosconocio_otros")
 };
 var inputOtrosComoNosConocio = document.createElement("input");
 var inputTelefono = document.getElementById("telefono");
@@ -64,7 +64,7 @@ textareaObservaciones.addEventListener('keypress', function(evt) {
 });
 
 form.addEventListener("submit", function(evt) {
-    
+   
     if (Modernizr.classList) {
         inputNombre.classList.remove("error");
         inputEmail.classList.remove("error");
@@ -86,91 +86,162 @@ form.addEventListener("submit", function(evt) {
         }
     }
     
-
-    if ( inputNombre.checkValidity() == false ) {
-        if (Modernizr.classList) {
-            inputNombre.classList.add("error");
-        } else {
-            inputNombre.className += ' error';
-        }
-        inputNombre.focus();
-        evt.preventDefault();
-        return false;
+    if (!Modernizr.formvalidation) {
+       if (inputNombre.value.length == 0) {
+             inputNombre.className += ' error';
+             inputNombre.focus();
+             evt.preventDefault();
+             return false;
+       }
+    } else {
+        if ( inputNombre.checkValidity() == false ) {
+            if (Modernizr.classList) {
+                inputNombre.classList.add("error");
+            } else {
+                inputNombre.className += ' error';
+            }
+            inputNombre.focus();
+            evt.preventDefault();
+            return false;
+        };    
     };
+    
  
-    
-    if(inputEmail.checkValidity() == false) {
-        if (Modernizr.classList) {
-		  inputEmail.classList.add("error");
-		  inputNombre.classList.remove("error");
-        } else {
+    if (!Modernizr.formvalidation) {
+            
+       if (inputEmail.value.length == 0 || arroba_pos<1 || punto_pos<arroba_pos+2 || punto_pos+2>=inputEmail.value.length) {
+            var arroba_pos = inputEmail.value.indexOf("@");
+            var punto_pos = inputEmail.value.lastIndexOf(".");
             inputEmail.className += ' error';
-        }
-        inputEmail.focus();
-		evt.preventDefault();
-		return false;
-	};
-    
-    if (opcionesComoNosConocio.prensa.checkValidity() == false) {
-		
-        if (Modernizr.classList) {
-            document.getElementById("label_comonosconocio").classList.add("errorlabel");
-        } else {
-            document.getElementById("label_comonosconocio").className += ' error';
-        }
-        
-		evt.preventDefault();
-		return false;
+            inputEmail.focus();
+            evt.preventDefault();
+            return false;
+       }
+    } else {
+        if(inputEmail.checkValidity() == false) {
+            if (Modernizr.classList) {
+    		  inputEmail.classList.add("error");
+    		  inputNombre.classList.remove("error");
+            } else {
+                inputEmail.className += ' error';
+            }
+            inputEmail.focus();
+    		evt.preventDefault();
+    		return false;
+    	};
+    };
 
-	};
+    if (!Modernizr.formvalidation) {
+        var chequeado = false;
+        for (var i=0; i<inputComoNosConocio.length; i++) {
+            if (inputComoNosConocio[i].type == 'radio' && inputComoNosConocio[i].checked) {
+                chequeado = true;
+            } 
+        }   
+        
+        if (chequeado == false){
+            document.getElementById("label_comonosconocio").className += ' error';      
+            evt.preventDefault();
+            return false;  
+        }
+    } else {
+        if (opcionesComoNosConocio.prensa.checkValidity() == false) {
+    		
+            if (Modernizr.classList) {
+                document.getElementById("label_comonosconocio").classList.add("errorlabel");
+            } else {
+                document.getElementById("label_comonosconocio").className += ' error';
+            }
+            
+    		evt.preventDefault();
+    		return false;
+
+    	};
+    };
     
     if(document.getElementById("otroscomonosconocio")){
-        
-		if(document.getElementById("otroscomonosconocio").checkValidity() == false) {	
-            if (Modernizr.classList) {
-                inputOtrosComoNosConocio.classList.add("error");
-            } else {
-                inputOtrosComoNosConocio.className += ' error';
-            }
-			document.getElementById("otroscomonosconocio").focus();
-			evt.preventDefault();
-			return false;
-		}
+        if (!Modernizr.formvalidation) {
+           if (inputOtrosComoNosConocio.value.length == 0) {
+                 inputOtrosComoNosConocio.className += ' error';
+                 inputOtrosComoNosConocio.focus();
+                 evt.preventDefault();
+                 return false;
+           }
+        } else {
+    		if(document.getElementById("otroscomonosconocio").checkValidity() == false) {	
+                if (Modernizr.classList) {
+                    inputOtrosComoNosConocio.classList.add("error");
+                } else {
+                    inputOtrosComoNosConocio.className += ' error';
+                }
+    			document.getElementById("otroscomonosconocio").focus();
+    			evt.preventDefault();
+    			return false;
+    		};
+        };
 	};
-    
-    if ( inputTelefono.checkValidity() == false) {
-        if (Modernizr.classList) {
-            inputTelefono.classList.add("error");
-        } else {
-            inputTelefono.className += ' error';
-        }
-        inputTelefono.focus();
-        evt.preventDefault();
-        return false;
+
+    if (!Modernizr.formvalidation) {
+       if (inputTelefono.value.length == 0) {
+             inputTelefono.className += ' error';
+             inputTelefono.focus();
+             evt.preventDefault();
+             return false;
+       }
+    } else {
+        if ( inputTelefono.checkValidity() == false) {
+            if (Modernizr.classList) {
+                inputTelefono.classList.add("error");
+            } else {
+                inputTelefono.className += ' error';
+            }
+            inputTelefono.focus();
+            evt.preventDefault();
+            return false;
+        };
     };
-    
-    if ( textareaObservaciones.checkValidity() == false) {
-        if (Modernizr.classList) {
-            textareaObservaciones.classList.add("error");
-        } else {
-            textareaObservaciones.className += ' error';
-        }
-        textareaObservaciones.focus();
-        evt.preventDefault();
-        return false;
-    };
+
+    if (!Modernizr.formvalidation) {
+       if (textareaObservaciones.value.length == 0) {
+             textareaObservaciones.className += ' error';
+             textareaObservaciones.focus();
+             evt.preventDefault();
+             return false;
+       }
+    } else {
+        if ( textareaObservaciones.checkValidity() == false) {
+            if (Modernizr.classList) {
+                textareaObservaciones.classList.add("error");
+            } else {
+                textareaObservaciones.className += ' error';
+            }
+            textareaObservaciones.focus();
+            evt.preventDefault();
+            return false;
+        };
+    }
     
     if (!Modernizr.formvalidation) {
-        alert('validation');
+        
+        submitInput.appendChild(loadingButton);
+        
+        setTimeout(function(){
+            submitInput.removeChild(loadingButton);
+            alert("Mensaje Eviado Correctamente.")
+        }, 3000);
+
+        
     } else {
+        
         submitInput.appendChild(loadingButton);
         evt.preventDefault();
+        setTimeout(function(){
+            submitInput.removeChild(loadingButton);
+            sendNotification("Formulario recibido");
+        }, 1000);
     }
 
-	setTimeout(function(){
-		submitInput.removeChild(loadingButton);
-		sendNotification("Formulario recibido");
-	}, 1000);
+	
     
    
 });
