@@ -90,6 +90,7 @@ body {
 }
 
 .titulo_imagen {
+    
     font-size: 12px;
 }
 
@@ -104,7 +105,7 @@ body {
 }
 
 .flip {
-	position: relative;
+/*	position: relative;*/
 	height: 305px;
 }
 
@@ -455,8 +456,9 @@ textarea {
 }
 
 .no-flexbox .nofb .item2 {
+    
     float: right;
-    margin-right: 200px;
+/*    margin-right: 100px;*/
 }
 
 .no-flexbox .nofb .item3 {
@@ -483,4 +485,94 @@ textarea {
     width: 20%;
     float: left;
     display: inline-block;
+}
+
+.quickFlip, .quickFlip3 {
+    height: 216px;
+    width: 322px;
+}
+
+
+
+
+
+.clear {
+    clear: both;
+    magin: 0;
+    padding: 0;
+}
+
+.redPanel, .blackPanel {
+    text-align: center;
+}
+
+.half-col {
+    width: 50%;
+    float: left;
+}
+
+
+
+.quickFlip .blackPanel, .quickFlip2 .blackPanel, .quickFlip3 .blackPanel {
+    background-color: #FFF;
+    color: #FFF;
+}
+
+.quickFlip .redPanel, .quickFlip2 .redPanel, .quickFlip3 .redPanel {
+    background-color: #FFF;
+    color: #FFF;
+    
+}
+
+.half-col p {
+    padding: 5px;
+    margin:0 30px 10px 30px;
+}
+
+.half-col p.panel-content {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.half-col h3, .half-col h4 {
+    padding: 0;
+    margin: 0 35px;
+}
+
+.half-col h3 {
+    text-align: left;
+    font-size:24px;
+    line-height:24px;
+}
+
+.half-col .redPanel h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.half-col .first {
+    margin-top: 30px;
+}
+
+.half-col EM {
+    display: block;
+    padding: 0;
+}
+
+.half-col A.quickFlipCta {
+    position: absolute;
+    bottom: 30px;
+    left: 65px;
+    width: 210px;
+    font-size: 15px;
+    outline: none;
+}
+
+.quickFlip2 .redPanel a {
+    color: #FFF;
+}
+
+.quickFlipCta {
+    cursor: pointer;
+    text-decoration: none;
 }
